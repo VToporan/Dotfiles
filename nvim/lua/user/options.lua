@@ -40,4 +40,3 @@ vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd "set colorcolumn=120"
 vim.cmd "cmap W w"
 vim.cmd "cmap Q q"
-vim.cmd [[set iskeyword+=-]]

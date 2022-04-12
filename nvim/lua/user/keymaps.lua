@@ -1,4 +1,4 @@
-local opts = { noremap = true, silent = true, expr = true, }
+local opts = { noremap = true, silent = true, }
 local term_opts = { silent = true }
 
 -- Shorten function name
@@ -25,7 +25,7 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "J", "10j", opts)
 keymap("n", "K", "10k", opts)
 
-keymap("n", "<leader>e", ":Lex 20<CR>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>q", ":q<CR>", opts)
 
 -- Resize with arrows

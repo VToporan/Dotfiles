@@ -30,6 +30,7 @@ keymap("n", "L", ":BufferLineCycleNext<CR>", opts)
 
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>q", ":q<CR>", opts)
+keymap("n", "qq", ":Bdelete<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)

@@ -78,6 +78,8 @@ return packer.startup(function(use)
   -- Treesitter
   use "nvim-treesitter/nvim-treesitter"
   use "JoosepAlviste/nvim-ts-context-commentstring"
+  use "windwp/nvim-ts-autotag"
+  use "DerekStride/tree-sitter-sql"
 
   -- Comments
   use "numToStr/Comment.nvim"

@@ -29,6 +29,8 @@ keymap("n", "H", ":BufferLineCyclePrev<CR>", opts)
 keymap("n", "L", ":BufferLineCycleNext<CR>", opts)
 
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<C-b>", ":NvimTreeFocus<CR>", opts)
+
 keymap("n", "<leader>q", ":q<CR>", opts)
 keymap("n", "qq", ":Bdelete<CR>", opts)
 

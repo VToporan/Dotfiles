@@ -169,6 +169,11 @@ _G.packer_plugins = {
     path = "/home/topo/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-ts-autotag"] = {
+    loaded = true,
+    path = "/home/topo/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
+    url = "https://github.com/windwp/nvim-ts-autotag"
+  },
   ["nvim-ts-context-commentstring"] = {
     loaded = true,
     path = "/home/topo/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
@@ -203,6 +208,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/topo/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["tree-sitter-sql"] = {
+    loaded = true,
+    path = "/home/topo/.local/share/nvim/site/pack/packer/start/tree-sitter-sql",
+    url = "https://github.com/DerekStride/tree-sitter-sql"
   },
   ["vim-bbye"] = {
     loaded = true,

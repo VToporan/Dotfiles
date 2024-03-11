@@ -1,38 +1,31 @@
-local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+local status_ok, mason = pcall(require, "mason")
 if not status_ok then
-    vim.notify("nvim-lsp-installer not found!")
+    vim.notify("mason not found!")
 	return
 end
 
--- Register a handler that will be called for all installed servers.
--- Alternatively, you may also register handlers on specific server instances instead (see example below).
-lsp_installer.on_server_ready(function(server)
-	local opts = {
-		on_attach = require("user.lsp.handlers").on_attach,
-		capabilities = require("user.lsp.handlers").capabilities,
-	}
+local status_ok, config = pcall(require, "mason-lspconfig")
+if not status_ok then
+    vim.notify("mason-lspconfig not found!")
+	return
+end
 
-	 if server.name == "sumneko_lua" then
-	 	local sumneko_opts = require("user.lsp.settings.sumneko_lua")
-	 	opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
-	 end
+local status_ok, lspconfig = pcall(require, "lspconfig")
+if not status_ok then
+    vim.notify("lspconfig not found!")
+	return
+end
 
-	 if server.name == "clangd" then
-	 	local clangd_opts = require("user.lsp.settings.clangd")
-	 	opts = vim.tbl_deep_extend("force", clangd_opts, opts)
-	 end
 
-	 if server.name == "clangd" then
-	 	local clangd_opts = require("user.lsp.settings.clangd")
-	 	opts = vim.tbl_deep_extend("force", clangd_opts, opts)
-	 end
+mason.setup()
+config.setup()
 
-     if server.name == "pyright" then
-	    local pyright_opts = require("user.lsp.settings.pyright")
-	    opts = vim.tbl_deep_extend("force", pyright_opts, opts)
-	 end
+lspconfig.clangd.setup{
+    on_attach = require("user.lsp.handlers").on_attach,
+    capabilities = require("user.lsp.handlers").capabilities,
+}
 
-	-- This setup() function is exactly the same as lspconfig's setup function.
-	-- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-	server:setup(opts)
-end)
+lspconfig.pyright.setup{
+    on_attach = require("user.lsp.handlers").on_attach,
+    capabilities = require("user.lsp.handlers").capabilities,
+}

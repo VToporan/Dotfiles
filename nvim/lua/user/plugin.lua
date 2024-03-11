@@ -50,6 +50,7 @@ return packer.startup(function(use)
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
+
   -- Colorscheme
   use "ellisonleao/gruvbox.nvim"
   use "folke/tokyonight.nvim"
@@ -69,8 +70,9 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- LSP
+  use "williamboman/mason.nvim" -- simple to use language server installer
+  use "williamboman/mason-lspconfig.nvim"
   use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -86,6 +88,9 @@ return packer.startup(function(use)
 
   -- Gitsigns
   use "lewis6991/gitsigns.nvim"
+
+  -- TagBar
+  use "preservim/tagbar"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

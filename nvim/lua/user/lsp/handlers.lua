@@ -78,7 +78,7 @@ local function lsp_keymaps(bufnr)
   keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
   keymap(bufnr, "n", "gl", '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>', opts)
   keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
-  keymap(bufnr, "n", "<leader>=", '<cmd>lua vim.lsp.buf.formatting_sync({tab_width=4} )<CR><cmd> lua vim.notify("Fromatted file")<CR>', opts)
+  keymap(bufnr, "n", "<leader>=", '<cmd>lua vim.lsp.buf.format()<CR><cmd> lua vim.notify("Fromatted file")<CR>', opts)
 end
 
 M.on_attach = function(client, bufnr)
@@ -93,6 +93,6 @@ if not status_ok then
   return
 end
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 return M

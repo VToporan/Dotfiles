@@ -19,10 +19,9 @@ dict.setup({
         ["text"] = { "/usr/share/dict/words" },
     },
     -- The following are default values, so you don't need to write them if you don't want to change them
-    exact = 2,
+    exact_length = 2,
     first_case_insensitive = false,
     async = false,
-    capacity = 5,
     debug = false,
 })
 

@@ -31,6 +31,9 @@ keymap("n", "L", ":BufferLineCycleNext<CR>", opts)
 keymap("n", "<leader>e", ":NvimTreeFocus<CR>", opts)
 keymap("n", "<leader>b", ":NvimTreeToggle<CR>", opts)
 
+keymap("n", "<C-e>", ":TagbarOpenAutoClose<CR>", opts)
+keymap("n", "<C-b>", ":TagbarToggle<CR>", opts)
+
 keymap("n", "<leader>q", ":q<CR>", opts)
 keymap("n", "qq", ":Bdelete<CR>", opts)
 

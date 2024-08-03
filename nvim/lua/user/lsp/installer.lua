@@ -25,6 +25,11 @@ lspconfig.clangd.setup{
     capabilities = require("user.lsp.handlers").capabilities,
 }
 
+lspconfig.cmake.setup{
+    on_attach = require("user.lsp.handlers").on_attach,
+    capabilities = require("user.lsp.handlers").capabilities,
+}
+
 lspconfig.pyright.setup{
     on_attach = require("user.lsp.handlers").on_attach,
     capabilities = require("user.lsp.handlers").capabilities,
